@@ -104,7 +104,7 @@ if uploaded_file is not None:
 
             # 格式化 C++ 代码函数
             def format_cpp_array(h1, s1, v1, h2, s2, v2):
-                return f"{{ {int(h1)}.0, {int(s1)}.0, {int(v1)}.0, 0.0, {int(h2)}.0, {int(s2)}.0, {int(v2)}.0, 0.0 }}"
+                return f"{{ {int(h1)}, {int(s1)}, {int(v1)}, 0, {int(h2)}, {int(s2)}, {int(v2)}, 0 }}"
 
             st.success("✅ 解析成功！请点击右上角复制下方代码，替换 DLL 中的旧数组：")
 
