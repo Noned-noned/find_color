@@ -84,9 +84,10 @@ if uploaded_file is not None:
             st.error("⚠️ 未在中心提取到彩色像素！原因可能是：\n1. 准星是纯白/黑色的（S和V过低）。\n2. 游戏截出来是纯黑的（全屏独占模式导致）。")
         else:
             # 计算原始极值
-            raw_h_min, raw_h_max = min(h_list), max(h_list)
-            raw_s_min, raw_s_max = min(s_list), max(s_list)
-            raw_v_min, raw_v_max = min(v_list), max(v_list)
+            # 计算原始极值，必须套上 int() 转换，防止 OpenCV uint8 溢出！
+            raw_h_min, raw_h_max = int(min(h_list)), int(max(h_list))
+            raw_s_min, raw_s_max = int(min(s_list)), int(max(s_list))
+            raw_v_min, raw_v_max = int(min(v_list)), int(max(v_list))
 
             # 加入容错浮动
             final_h_min = max(0, raw_h_min - h_margin)
