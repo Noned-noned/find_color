@@ -20,7 +20,7 @@ st.markdown("""
 st.sidebar.header("⚙️ 算法调优参数")
 st.sidebar.markdown("一般保持默认即可，如遇提取失败可适当放宽。")
 
-box_size = st.sidebar.slider("中心采样矩阵大小 (像素)", min_value=5, max_value=50, value=20, step=1)
+box_size = st.sidebar.slider("中心采样矩阵大小 (像素)", min_value=3, max_value=50, value=20, step=1)
 min_s = st.sidebar.slider("剔除背景 - 最低饱和度 (S)", min_value=0, max_value=255, value=15)
 min_v = st.sidebar.slider("剔除背景 - 最低明度 (V)", min_value=0, max_value=255, value=15)
 
